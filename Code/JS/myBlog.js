@@ -8,9 +8,9 @@ function getURLParameter(name) {
 
 $(document).ready(function(){
 	section = getURLParameter("section")
-	if(section ="blog"){
+	if(section =="blog" || section == "null"){
 		page = getURLParameter("page");
-		if(page=="null")
+		if(page =="null")
 			page = 1;
 		document.title = "Page"+page+" of my Blog";
 		$("#content").append("<div id='posts'></div>");
@@ -18,15 +18,15 @@ $(document).ready(function(){
 	//Temp
 	if(section == "admin" )
 		console.log("admin");
-})
+});
 $("#posts").ready(function(){
 	$.ajax({
-		url: "load/page.php",
+		url: "php/page.php?page="+page
 	}).done(function(data){
 		var json = $.parseJSON(data);
 		$.each(json, function(i,item){
 		  $("#posts").append("<div class='blogPost'><div class='blogTitle'>"+item.blogTitle+"</div><div class='blogText'>"+item.blogText+"</div></div>")
 		});
 
-	})
+	});
 });

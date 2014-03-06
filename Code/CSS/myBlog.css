@@ -1,0 +1,45 @@
+body{
+	margin:0;
+	padding:0;
+	background: rgba(65,131,196,0.1);
+}
+#content{
+	width:800px;
+	margin: auto;
+}
+.blogPost{
+	padding:15px;
+	margin-top:10px;
+	margin-bottom: 10px;
+	min-height: 200px;
+	border-radius: 20px;
+	border:solid 2px lightgrey;
+	background-color:white;
+}
+.blogTitle{
+	font-weight: bold;
+	border-bottom: solid 1px lightgrey;
+	font-size:14pt;
+}
+.blogText{
+	margin-top: 5px;
+}
+#header{
+	margin:0;
+	height:50px;
+	border-bottom: solid 2px lightgrey;
+	background-color: white;
+}
+.header-item{
+	height: 50px;
+	width:100px;
+	border-right: solid 1px grey;	
+	padding: auto;
+}
+.header-item a{
+	display: block;
+	text-decoration: none;
+	font-size: 14pt;
+	text-align: center;
+	color: black;
+}

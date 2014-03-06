@@ -4,6 +4,7 @@ body{
 	background: rgba(65,131,196,0.1);
 }
 #content{
+	min-height:1000px;
 	width:800px;
 	margin: auto;
 }
@@ -21,8 +22,17 @@ body{
 	border-bottom: solid 1px lightgrey;
 	font-size:14pt;
 }
+.blogTitle :hover{
+	text-decoration: underline;
+}
 .blogText{
 	margin-top: 5px;
+	min-height: 175px;
+	max-height: 175px;
+}
+.blogDate{
+	border-top: solid 1px lightgrey;
+	height:30px;
 }
 #header{
 	margin:0;
@@ -36,10 +46,27 @@ body{
 	border-right: solid 1px grey;	
 	padding: auto;
 }
+
 .header-item a{
 	display: block;
 	text-decoration: none;
 	font-size: 14pt;
 	text-align: center;
 	color: black;
+}
+#footer{
+	padding-top: 50px;
+	width: 600px;
+	height: 100px;
+	margin: auto;
+	text-align: center;
+}
+#footer a{
+	color: grey;
+
+}
+#footerLine{
+	width: 400px;
+	border-top: solid 2px lightgrey;
+	margin: auto;
 }

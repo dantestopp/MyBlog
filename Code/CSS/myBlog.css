@@ -34,39 +34,32 @@ body{
 	border-top: solid 1px lightgrey;
 	height:30px;
 }
-#header{
-	margin:0;
-	height:50px;
-	border-bottom: solid 2px lightgrey;
-	background-color: white;
-}
-.header-item{
-	height: 50px;
-	width:100px;
-	border-right: solid 1px grey;	
-	padding: auto;
-}
+#nav{
 
-.header-item a{
-	display: block;
-	text-decoration: none;
-	font-size: 14pt;
+	margin:auto;
+	width: 200px;
 	text-align: center;
+}
+#nav a{
+	margin-top: 10px;
+	text-decoration: none;
 	color: black;
 }
+
 #footer{
-	padding-top: 50px;
+	padding-top: 20px;
 	width: 600px;
 	height: 100px;
 	margin: auto;
 	text-align: center;
 }
 #footer a{
-	color: grey;
+	text-decoration: none;
+	color: black;
 
 }
-#footerLine{
-	width: 400px;
-	border-top: solid 2px lightgrey;
+#show {
+	width:960px;
 	margin: auto;
 }
+

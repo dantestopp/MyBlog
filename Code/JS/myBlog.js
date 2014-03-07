@@ -25,8 +25,9 @@ $("#posts").ready(function(){
 		url: "php/page.php?page="+page
 	}).done(function(data){
 		var json = $.parseJSON(data);
+		$("#posts").empty();
 		$.each(json, function(i,item){
-		  $("#posts").append("<div class='blogPost'><div onclick='load("+item.id_blogPost+");' class='blogTitle'>"+item.blogTitle+"</div><div class='blogText'>"+item.blogText+"</div><div class='blogDate'>"+item.blogDate+"</div></div>")
+		  $("#posts").append("<div class='blogPost'><div class='blogTitle'>"+item.blogTitle+"</div><div class='blogText'>"+item.blogText+"</div><div class='blogDate'>"+item.blogDate+"</div></div>")
 		});
 		var nextPage = parseInt(page+1);
 		var lastPage = parseInt(page-1);
@@ -38,11 +39,11 @@ $("#posts").ready(function(){
 });
 function load(id)
 {
-	$("#content").empty();
 	$.ajax({
 		url: "php/post.php?id="+id
 	}).done(function(data){
 		var json = $.parseJSON(data);
+		$("#content").empty();
 		$.each(json, function(i,item){
 		  $("#content").append("<div class='blogPost'><div class='blogTitle'>"+item.blogTitle+"</div><div class='blogText'>"+item.blogText+"</div><div class='blogDate'>"+item.blogDate+"</div></div>")
 		});

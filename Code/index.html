@@ -1,23 +1,32 @@
 <html>
 	<head>
 		<title>My Blog</title>
-		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="JS/jquery.js"></script>
 		<script src="JS/myBlog.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/myBlog.css" />
+		<link rel="stylesheet" type="text/css" href="CSS/semantic.min.css" />
 	</head>
 	<body>
-		<div id="header">
-		<div class="header-item">
-		<a href="index.html">Home</a>
+	<div id="nav">
+			<a href="index.html"><i class="circular large Home icon"></i></a>
+			<a href="index.html"><i class="circular large Sign in icon"></i></a>
+	</div>
+	<div class="ui section divider"></div>
+		<div id="show">
+			<h4 class="ui top attached header">
+			  Title for the Post
+			</h4>
+			<div class="ui segment attached">
+			  <p>Some Text</p>
+			</div>
+			<h4 class="ui bottom attached header">
+			  time
+			</h4>
 		</div>
-		</div>
-		<div id="content">
-
-		</div>
+		<div class="ui section divider"></div>
 		<div id="footer">
-			<div id="footerLine"></div>
-			<p>Made in Zurich</p>
-			<a target="_blank" href="https://github.com/happyoniens/MyBlog/">Happyoniens on Github</a>
+			<a target="_blank" href="https://github.com/happyoniens/MyBlog"><i class="circular large Github icon"></i></a>
+			<a target="_blank" href="https://twitter.com/happyoniens"><i class="circular large Twitter icon"></i></a>
 		</div>
 	</body>
 	

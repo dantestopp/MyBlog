@@ -1,4 +1,5 @@
 <?php
+require "db.php";
 $id = $_GET['id'];
 
 $mysqli = new mysqli('localhost','root','','myBlog');

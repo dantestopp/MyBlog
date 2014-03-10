@@ -71,6 +71,6 @@ function login()
 				if(json.success=="false")
 					$("#write").prepend('<div class="ui error message"><div class="header">'+json.exception+'</div></div>');
 				else if(json.success =="true")
-					console.log("yeeih");
+					window.location.replace("index.html");
 			});
 	};

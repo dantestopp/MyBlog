@@ -5,6 +5,7 @@ function getURLParameter(name) {
    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
    );
 }
+jQuery.fn.exists = function(){return this.length;}
 
 $(document).ready(function(){
 	section = getURLParameter("section");
@@ -14,6 +15,7 @@ $(document).ready(function(){
 			page = 1;
 		document.title = "Page"+page+" of my Blog";
 		$("#show").append("<div id='posts'></div>");
+		loadPage();
 	}
 	if(section == "admin" )
 	{
@@ -21,7 +23,8 @@ $(document).ready(function(){
 		$("#show").append("<div id='write'></div>");
 	}	
 });
-$("#posts").on(function(){
+function loadPage()
+{
 	$.ajax({
 		url: "php/page.php?page="+page
 	}).done(function(data){
@@ -37,7 +40,7 @@ $("#posts").on(function(){
 		$("#posts").append("<div id='lastPage'><a href='?page="+lastPage+"'>Last Page</a></div><div id='nextPage'><a href='?page="+nextPage+"'>Next Page</a></div>");
 
 	});
-});
+}
 function load(id)
 {
 	$.ajax({

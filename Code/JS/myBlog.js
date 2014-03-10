@@ -62,7 +62,15 @@ function loadLogin()
 		$("#write").html(data);
 	});
 }
-$("#submitLogin").click(function()
+function login()
 	{
-		$.post( "login.php", { username: $("#username").val(), password: $("#password").val() } );
-	});
+		console.log("Login");
+		$.post( "php/login.php", { username: $("#username").val(), password: $("#password").val() } ).done(
+			function(data){
+				var json = $.parseJSON(data);
+				if(json.success=="false")
+					$("#write").prepend('<div class="ui error message"><div class="header">'+json.exception+'</div></div>');
+				else if(json.success =="true")
+					console.log("yeeih");
+			});
+	};

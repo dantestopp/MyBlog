@@ -17,7 +17,7 @@ $(document).ready(function(){
 		$("#show").append("<div id='posts'></div>");
 		loadPage();
 	}
-	if(section == "admin" )
+	if(section == "login" )
 	{
 		$("#show").empty();
 		$("#show").append("<div id='write'></div>");

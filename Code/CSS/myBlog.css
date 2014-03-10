@@ -3,11 +3,18 @@ body{
 	padding:0;
 	background: rgba(65,131,196,0.1);
 }
+.font-face {
+  font-family: 'Duru Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Duru Sans'), local('DuruSans-Regular'), url(http://themes.googleusercontent.com/static/fonts/durusans/v4/0rnIdjSQWlqFS5KpKzVfzj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
 #content{
 	min-height:1000px;
 	width:800px;
 	margin: auto;
 }
+
 .blogPost{
 	padding:15px;
 	margin-top:10px;

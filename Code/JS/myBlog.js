@@ -13,7 +13,7 @@ $(document).ready(function(){
 		if(page =="null")
 			page = 1;
 		document.title = "Page"+page+" of my Blog";
-		$("#content").append("<div id='posts'></div>");
+		$("#show").append("<div id='posts'></div>");
 	}
 	if(section == "admin" )
 	{

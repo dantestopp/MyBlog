@@ -7,8 +7,8 @@ function getURLParameter(name) {
 }
 
 $(document).ready(function(){
-	section = getURLParameter("section")
-	if(section =="blog" || section == "null"){
+	section = getURLParameter("section");
+	if(section == "blog" || section == "null"){
 		page = getURLParameter("page");
 		if(page =="null")
 			page = 1;
@@ -17,10 +17,11 @@ $(document).ready(function(){
 	}
 	if(section == "admin" )
 	{
-		$("#content").append("<div id='write'></div>");
+		$("#show").empty();
+		$("#show").append("<div id='write'></div>");
 	}	
 });
-$("#posts").ready(function(){
+$("#posts").on(function(){
 	$.ajax({
 		url: "php/page.php?page="+page
 	}).done(function(data){

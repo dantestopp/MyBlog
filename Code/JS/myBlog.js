@@ -21,6 +21,7 @@ $(document).ready(function(){
 	{
 		$("#show").empty();
 		$("#show").append("<div id='write'></div>");
+		loadLogin();
 	}	
 });
 function loadPage()
@@ -47,9 +48,21 @@ function load(id)
 		url: "php/post.php?id="+id
 	}).done(function(data){
 		var json = $.parseJSON(data);
-		$("#content").empty();
+		$("#posts").empty();
 		$.each(json, function(i,item){
-		  $("#content").append("<div class='blogPost'><div class='blogTitle'>"+item.blogTitle+"</div><div class='blogText'>"+item.blogText+"</div><div class='blogDate'>"+item.blogDate+"</div></div>")
+		  $("#posts").append("<div class='blogPost'><div class='blogTitle'>"+item.blogTitle+"</div><div class='blogText'>"+item.blogText+"</div><div class='blogDate'>"+item.blogDate+"</div></div>")
 		});
 	});
 }
+function loadLogin()
+{
+	$.ajax({
+		url: "login.html"
+	}).done(function(data){
+		$("#write").html(data);
+	});
+}
+$("#submitLogin").click(function()
+	{
+		$.post( "login.php", { username: $("#username").val(), password: $("#password").val() } );
+	});

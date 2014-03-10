@@ -10,6 +10,7 @@ jQuery.fn.exists = function(){return this.length;}
 $(document).ready(function(){
 	section = getURLParameter("section");
 	if(section == "blog" || section == "null"){
+		$("#show").empty();
 		page = getURLParameter("page");
 		if(page =="null")
 			page = 1;
@@ -22,6 +23,12 @@ $(document).ready(function(){
 		$("#show").empty();
 		$("#show").append("<div id='write'></div>");
 		loadLogin();
+	}
+	if(section == "dashboard")
+	{
+		$("#show").empty();
+		$("#show").append("<div id='dashboard'></div>");
+		loadDashboard();
 	}	
 });
 function loadPage()
@@ -74,3 +81,12 @@ function login()
 					window.location.replace("index.html");
 			});
 	};
+function loadDashboard()
+{
+	$.ajax({
+		url: "login.html"
+	}).done(function(data){
+		$("#write").html(data);
+	});
+}
+

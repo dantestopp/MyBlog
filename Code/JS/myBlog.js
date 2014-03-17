@@ -39,12 +39,13 @@ function loadPage()
 		var json = $.parseJSON(data);
 		$("#posts").empty();
 		$.each(json, function(i,item){
-		  $("#posts").append("<div class='blogPost'><div class='blogTitle'>"+item.blogTitle+"</div><div class='blogText'>"+item.blogText+"</div><div class='blogDate'>"+item.blogDate+"</div></div>")
+		  $("#posts").append("<div class='show'><h4 class='ui top attached header'>"+item.blogTitle+"</h4><div class='ui segment attached'><div class='ui segment content'><p>"+item.blogText+"</p></div><div class='ui bottom right attached label'>"+item.blogDate+"</div></div></div>")
 		});
 		var nextPage = parseInt(page+1);
 		var lastPage = parseInt(page-1);
 		if(lastPage < 1)
 			lastPage = 0;
+	
 		$("#posts").append("<div id='lastPage'><a href='?page="+lastPage+"'>Last Page</a></div><div id='nextPage'><a href='?page="+nextPage+"'>Next Page</a></div>");
 
 	});
@@ -57,7 +58,7 @@ function load(id)
 		var json = $.parseJSON(data);
 		$("#posts").empty();
 		$.each(json, function(i,item){
-		  $("#posts").append("<div class='blogPost'><div class='blogTitle'>"+item.blogTitle+"</div><div class='blogText'>"+item.blogText+"</div><div class='blogDate'>"+item.blogDate+"</div></div>")
+		  $("#posts").append("<div class='show'><h4 class='ui top attached header'>"+item.blogTitle+"</h4><div class='ui segment attached'><div class='ui segment content'><p>"+item.blogText+"</div><div class='ui bottom right attached label'>"+item.blogDate+"</div></div></div>")
 		});
 	});
 }

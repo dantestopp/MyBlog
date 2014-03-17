@@ -84,9 +84,9 @@ function login()
 function loadDashboard()
 {
 	$.ajax({
-		url: "login.html"
+		url: "dashboard.html"
 	}).done(function(data){
-		$("#write").html(data);
+		$("#dashboard").html(data);
 	});
 }
 

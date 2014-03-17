@@ -5,6 +5,8 @@ MyBlog is a PHP-Software to make your special Blog.
 
 It will be published over the next months.
 
+[Twitter](https://www.twitter.com/happyoniens)
+
 Database
 ======
 Change your username and password to connect to your database.

@@ -90,7 +90,7 @@ function loadDashboard()
 		$("#dashboard").html(data);
 	});
 }
-$("#myfirstchart").ready(function (){
+/*$("#myfirstchart").ready(function (){
 
   var chart = new Morris.Line({
   // ID of the element in which to draw the chart.
@@ -112,4 +112,4 @@ $("#myfirstchart").ready(function (){
   	chart.data = "{'year':'2012','value':'12'}";
   }
   loadPostStat();
-});
+});*/

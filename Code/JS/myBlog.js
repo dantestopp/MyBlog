@@ -39,7 +39,7 @@ function loadPage()
 		var json = $.parseJSON(data);
 		$("#posts").empty();
 		$.each(json, function(i,item){
-		  $("#posts").append("<div class='show'><h4 class='ui top attached header'>"+item.blogTitle+"</h4><div class='ui segment attached'><div class='ui segment content'><p>"+item.blogText+"</p></div><div class='ui bottom right attached label'>"+item.blogDate+"</div></div></div>")
+		  $("#posts").append("<div class='show'><h4 class='ui top attached purple inverted segment'>"+item.blogTitle+"</h4><div class='ui blue segment attached'><div class='ui basic segment content'><p>"+item.blogText+"</p></div><div class='ui bottom right attached blue label'>"+item.blogDate+"</div></div></div>")
 		});
 		var nextPage = parseInt(page+1);
 		var lastPage = parseInt(page-1);

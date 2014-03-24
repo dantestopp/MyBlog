@@ -16,7 +16,7 @@ $mysqli = new mysqli('localhost','Your username','Your password','myblog');
 ?>
 ```
 
-Do-To
+To-Do
 =====
 1. Create Posts
 2. Comments

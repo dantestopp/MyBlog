@@ -45,7 +45,8 @@ function loadPage()
 		var lastPage = parseInt(page-1);
 		if(lastPage < 1)
 			lastPage = 0;
-		$("#posts").append("<div class='centered'> <div class='ui icon buttons centered'><a class='ui button' href=''><i class='double angle left icon'></i><\a><a class='ui button' href='?page="+lastPage+"'><i class='angle left icon'></i><\a><a class='ui button' href='?page="+nextPage+"'><i class='angle right icon'></i></a><a class='ui button' href=''><i class='double angle right icon'></i><\a></div></div>");
+		$("#posts").append("<div class='centered'><div class='ui pagination menu'><a class='icon item' href='?page="+lastPage+"'><i class='left arrow icon'></i></a> <a class='active item'>1 </a> <div class='disabled item'>... </div><a class='icon item' href='?page="+nextPage+"'><i class='right arrow icon' ></i></a></div></div>");
+		
 
 	});
 }

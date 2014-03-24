@@ -71,14 +71,11 @@ function loadLogin()
 }
 function login()
 	{
-		console.log("Login");
 		$.post( "php/login.php", { username: $("#username").val(), password: $("#password").val() } ).done(
 			function(data){
 				var json = $.parseJSON(data);
 				if(json.success=="false")
 					$("#write").prepend('<div class="ui error message"><div class="header">'+json.exception+'</div></div>');
-				else if(json.success =="true")
-					window.location.replace("index.html");
 			});
 	};
 function loadDashboard()
@@ -89,26 +86,3 @@ function loadDashboard()
 		$("#dashboard").html(data);
 	});
 }
-/*$("#myfirstchart").ready(function (){
-
-  var chart = new Morris.Line({
-  // ID of the element in which to draw the chart.
-  element: 'myfirstchart',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'year',
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['value'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ['Value']
-});
-  function loadPostStat()
-  {
-  	chart.data = "{'year':'2012','value':'12'}";
-  }
-  loadPostStat();
-});*/

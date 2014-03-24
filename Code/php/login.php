@@ -18,6 +18,7 @@ else
 			$row = $result->fetch_object();
 			echo '{"success":"true"}';
 			$_SESSION['user'] = $row->id_author;
+			header("Location: ./index.html?section=dashboard");
 		}
 		else
 			echo '{"success":"false","exception":"Something went wrong"}';

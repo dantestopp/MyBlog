@@ -17,6 +17,9 @@
                     </li>
                 </ul>
             </div>
+			<div class="navbar-right">
+				<button type="button" class="btn btn-default navbar-btn ">Sign in</button>
+			</div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->

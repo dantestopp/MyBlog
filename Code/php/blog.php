@@ -30,18 +30,26 @@ $myArray = array();
 
 	         
 	    }
+	    $valid = false;
 	    echo "</div>";
 	    $page += 10;
 	    if($_GET['page'] == 0)
 	    {
 	    	echo "<a href='index.php?page=2'>Next Page</a>";
+	    	$valid = true;
 	    }
-	    else if(mysql_num_rows($mysqli->query("SELECT id_blogPost FROM t_blogpost ORDER BY id_blogPost DESC LIMIT  ,10"))>0)
+	    else
 		{	
-			$temp_page = $_GET['page']-1;
-			echo "<a href='index.php?page=".$temp_page."'>Last page</a>";
+			$result = $mysqli->query("SELECT id_blogPost FROM t_blogpost ORDER BY id_blogPost DESC LIMIT  ,10");
+			if($result->num_rows > 0)
+			{
+				$temp_page = $_GET['page']-1;
+				echo "<a href='index.php?page=".$temp_page."'>Last page</a>";
+				$valid = true;
+			}
+			
 		}
-		else
+		if($valid == false)
 		{
 			$temp_page = $_GET['page']-1;
 			echo "<a href='index.php?page=".$temp_page."'>Last page</a><br/>";

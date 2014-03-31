@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteBase /Code/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^page/(.*)/$ index.php?page=$1 [L,QSA]
+RewriteRule ^(.*)/$ index.php?section=$1 [QSA]

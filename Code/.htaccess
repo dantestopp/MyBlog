@@ -1,3 +1,0 @@
-RewriteEngine On
-RewriteRule ^page/([^/]*)$ index.php?page=$1 [L]
-RewriteRule ^section/([^/]*)$ /index.php?section=$1 [L]

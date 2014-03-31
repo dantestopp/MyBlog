@@ -13,8 +13,8 @@
 		include "php/header.php";
 		echo "<div style='min-height:100px'></div>";
 		if(isset($_GET['section']))
-			if(file_exists("php/".$_GET['section']."php"))
-				include "php/".$_GET['section']."php";
+			if(file_exists("php/".$_GET['section'].".php"))
+				include "php/".$_GET['section'].".php";
 			else
 				include "php/blog.php";
 		else

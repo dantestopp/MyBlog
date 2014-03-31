@@ -5,7 +5,7 @@ if(isset($_GET['page']))
 else
 	$page = 0;
 $myArray = array();
-	if ($result = $mysqli->query("SELECT id_blogPost, blogTitle, blogText, blogAuthor, blogDate FROM t_blogpost, t_author WHERE t_author.id_author = blog_Author ORDER BY id_blogPost DESC LIMIT $page ,10")) {
+	if ($result = $mysqli->query("SELECT id_blogPost, blogTitle, blogText, blogAuthor, blogDate, username FROM t_blogpost, t_author WHERE t_author.id_author = blogAuthor ORDER BY id_blogPost DESC LIMIT $page ,10")) {
 		 echo' <div class="container">';
 	    while($row = $result->fetch_object()) {
 	         
@@ -15,7 +15,7 @@ $myArray = array();
             <div class="col-lg-8">
 
                 <!-- the actual blog post: title/author/date/content -->
-                <h1>'.$row->blogTitle.'</h1>
+               	<h1><a href="index.php?section=fullpost&id='.$row->id_blogPost.'">'.$row->blogTitle.'</a></h1>
                 <p class="lead">by <a href="index.php?section=author&id='.$row->blogAuthor.'">'.$row->username.' </a>
                 </p>
                 <hr>
@@ -31,6 +31,23 @@ $myArray = array();
 	         
 	    }
 	    echo "</div>";
+	    $page += 10;
+	    if($_GET['page'] == 0)
+	    {
+	    	echo "<a href='index.php?page=2'>Next Page</a>";
+	    }
+	    else if(mysql_num_rows($mysqli->query("SELECT id_blogPost FROM t_blogpost ORDER BY id_blogPost DESC LIMIT  ,10"))>0)
+		{	
+			$temp_page = $_GET['page']-1;
+			echo "<a href='index.php?page=".$temp_page."'>Last page</a>";
+		}
+		else
+		{
+			$temp_page = $_GET['page']-1;
+			echo "<a href='index.php?page=".$temp_page."'>Last page</a><br/>";
+			$temp_page+= 2;
+			echo "<a href='index.php?page=".$temp_page."'>Next page</a>";
+		}
 	}
 	else
 	{

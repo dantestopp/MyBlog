@@ -19,8 +19,11 @@
 					<hr>
 					<p>'.$row->blogText.'</p>
 
-					<hr>
-				</div>
+					<hr>';
+					 if(isset($_SESSION['userId'])){
+						echo '<a href="index.php?section&editPost&postID='.$row->id_blogPost.'" ><button class="btn btn-primary ">edit</button></a>';
+					 }
+				echo'</div>
             </div>';
 	if(isset($_SESSION['permission']) && $_SESSION['permission'] == 10){
 		 echo '<div class="row">

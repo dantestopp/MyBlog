@@ -14,7 +14,7 @@ if(isset($_POST['username'])&&isset($_POST['password']))
         }  
         else
         {
-            $mysqli->query("INSERT INTO t_author(username, password) VALUES ('.$username.','.$password.')");
+            $mysqli->query("INSERT INTO t_author(username, password) VALUES ('$username','$password')");
             header("Location: index.php?section=login");
         }
             

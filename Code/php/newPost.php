@@ -2,7 +2,22 @@
 	$mysqli = new mysqli('localhost','root','root001','myblog');
 	
 	if(isset($_POST['blogText']) && isset($_POST['blogTitle'])){
-		 $sql = 'INSERT INTO `myblog`.`t_blogpost` (`id_blogPost`, `blogTitle`, `blogText`, `blogAuthor`, `blogDate`) VALUES (NULL, '$_POST["blogTitle"]', '$_POST["blogText"]', '$_SESSION[["userId"]', CURRENT_TIMESTAMP)';
+	$text = $_POST['blogText'];
+	$title = $_POST['blogTitle'];
+	$author = $_SESSION['userId'];
+		 $sql = 'INSERT INTO `myblog`.`t_blogpost` (`id_blogPost`, `blogTitle`, `blogText`, `blogAuthor`, `blogDate`) VALUES (NULL, '$title', '$text', '$user', CURRENT_TIMESTAMP)';
+		$eintrag = $db->prepare( $sql );
+        $eintrag->bind_param( $title, $tezt, $author );
+        $eintrag->execute();
+		// Pruefen ob der Eintrag efolgreich war
+        if ($eintrag->affected_rows == 1)
+        {
+            echo 'Der neue Eintrage wurde hinzugef&uuml;gt.';
+        }
+        else
+        {
+            echo 'Der Eintrag konnte nicht hinzugef&uuml;gt werden.';
+        }
 	}
 	
 	 echo '

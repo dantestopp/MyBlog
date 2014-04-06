@@ -40,20 +40,20 @@ $myArray = array();
 	    $valid = false;
 	    echo "</div>";
 	    $page += 10;
-	    if($_GET['page'] == 0)
+            echo '<div class="container"><div class="row">';
+	    if($_GET['page'] == 0 || $_GET['page'] == 1)
 	    {
-	    	echo "<a href='index.php?page=2'>Next Page</a>";
+	    	echo "<a href='index.php?page=2'><span class='glyphicon glyphicon-chevron-right'></span></a>";
 	    	$valid = true;
 	    }
 	    else
 		{	
-                        
+                        $page += 10;
 			$result = $mysqli->query("SELECT id_blogPost FROM t_blogpost ORDER BY id_blogPost DESC LIMIT  $page,10");
                         if($result->num_rows > 0)
 			{
-                                echo "SELECT id_blogPost FROM t_blogpost ORDER BY id_blogPost DESC LIMIT  $page,10";
-				$temp_page = $_GET['page']-1;
-				echo "<a href='index.php?page=".$temp_page."'>Last page</a>";
+                               	$temp_page = $_GET['page']-1;
+				echo "<a href='index.php?page=".$temp_page."'><span class='glyphicon glyphicon-chevron-left'></span></a>";
 				$valid = true;
 			}
 			
@@ -61,10 +61,11 @@ $myArray = array();
 		if(!$valid)
 		{
 			$temp_page = $_GET['page']-1;
-			echo "<a href='index.php?page=".$temp_page."'>Last page</a><br/>";
+			echo "<a href='index.php?page=".$temp_page."'><span class='glyphicon glyphicon-chevron-left'></span></a>";
 			$temp_page+= 2;
-			echo "<a href='index.php?page=".$temp_page."'>Next page</a>";
+			echo "<a href='index.php?page=".$temp_page."'><span class='glyphicon glyphicon-chevron-right'></span></a>";
 		}
+                echo "</div></div>";
 	}
 	else
 	{
@@ -76,6 +77,6 @@ $myArray = array();
 			</div>
 		</div>';
 	}
-
+echo "<div style='min-height:20px'></div>";
 $result->close();
 $mysqli->close();

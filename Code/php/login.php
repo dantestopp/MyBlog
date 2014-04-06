@@ -15,8 +15,7 @@ if(isset($_POST['username'])&&isset($_POST['password']))
         else
         {
             $mysqli->query("INSERT INTO t_author(username, password) VALUES ('$username','$password')");
-            $_SESSION['userId'] = $mysqli->insert_id;
-            header("Location: index.php?section=dashboard");
+            header("Location: index.php");
         }
             
     }

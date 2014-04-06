@@ -25,6 +25,7 @@
 								<th>#</th>
 								<th>Username</th>
 								<th>Allow</th>
+                                                                <th>Delete</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -38,7 +39,8 @@
 							<tr>
 								<td>'.$row->id_author.'</td>
 								<td>'.$row->username.'</td>
-								<td><a href="index.php?section=allow&id='.$row->id_author.'">X</a></td>
+								<td><a href="index.php?section=allow&id='.$row->id_author.'"><span class="glyphicon glyphicon-ok"></span></a></td>
+                                                                <td><a href="index.php?section=deleteAuthor&id='.$row->id_author.'"><span class="glyphicon glyphicon-remove"></span></a></td>   
 							</tr>';
                                                     }
                                                     ?>
@@ -79,8 +81,8 @@
 
                                                 <tr>
                                                         <td>'.$row->id_author.'</td>
-                                                        <td>'.$row->username.'</td>
-                                                        <td><a href="index.php?section=deleteAuthor&id='.$row->id_author.'">X</a></td>
+                                                        <td><a href="index.php?section=author&id='.$row->id_author.'">'.$row->username.'</a></td>
+                                                        <td><a href="index.php?section=deleteAuthor&id='.$row->id_author.'"><span class="glyphicon glyphicon-remove"></span></a></td>
                                                 </tr>';
                                             }
                                             ?>

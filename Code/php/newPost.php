@@ -1,5 +1,5 @@
 <?php
-	$mysqli = new mysqli('localhost','root','root001','myblog');
+	$mysqli = new mysqli('localhost','root','','myblog');
 	
 	if(isset($_POST['blogText']) && isset($_POST['blogTitle'])){
 		 $sql = 'INSERT INTO `myblog`.`t_blogpost` (`id_blogPost`, `blogTitle`, `blogText`, `blogAuthor`, `blogDate`) VALUES (NULL, '$_POST["blogTitle"]', '$_POST["blogText"]', '$_SESSION[["userId"]', CURRENT_TIMESTAMP)';

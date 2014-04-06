@@ -21,15 +21,7 @@
 
 					<hr>';
 					 if(isset($_SESSION['userId'])){
-						echo '<a href="index.php?section&editPost&postID='.$row->id_blogPost.'" ><button class="btn btn-primary ">edit</button></a>';
+						echo '<a href="index.php?section=editPost&postID='.$row->id_blogPost.'" ><button class="btn btn-primary ">edit</button></a>';
 					 }
 				echo'</div>
-            </div>';
-	if(isset($_SESSION['permission']) && $_SESSION['permission'] == 10){
-		 echo '<div class="row">
-				<button type="button" class="btn btn-default">delete</button>
-				<a href="index.php?section=createPost&id='.$row->id_blogpost.'" ><button type="button" class="btn btn-default">edit</button></a>
-			</div>';
-	}
-	echo '</div>';
-?> 
+            </div></div>';

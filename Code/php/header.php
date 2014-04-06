@@ -7,9 +7,20 @@
                     </li>
 					<li></li>
                 </ul>
-				<div class="navbar-right">
-					<a href="login.php"><button type="button" class="btn btn-default navbar-btn ">Sign in</button></a>
-				</div>
+                <?php
+                    if(isset($_SESSION['userId']))
+                    {
+                        echo '<div class="navbar-right">
+					<a href="index.php?section=logout"><button type="button" class="btn btn-default navbar-btn ">Sign out</button></a>
+				</div>';
+                    }
+                    else
+                    {
+                        echo '<div class="navbar-right">
+					<a href="index.php?section=login"><button type="button" class="btn btn-default navbar-btn ">Sign in</button></a>
+				</div>';
+                    }
+                    ?>
             </div>
         </div>
     </nav>

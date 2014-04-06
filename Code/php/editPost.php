@@ -7,7 +7,6 @@
 	
 	 echo '
 	  <div class="container">';
-	if(isset($_GET['id'])){
 		//bearbeiten
 		$id = $_GET['id'];
 		
@@ -31,10 +30,4 @@
 				</div>
 				</form>
             </div>';
-			
-	}
-	else{
-		//Post erstellen
-	}
-	echo '</div>';
 ?>

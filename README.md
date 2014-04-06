@@ -18,7 +18,7 @@ $mysqli = new mysqli('localhost','Your username','Your password','myblog');
 
 To-Do
 =====
-~~1. Create Posts~~
+1. ~~Create Posts~~
 2. Comments
-~~3. Dashboard~~
+3. ~~Dashboard~~
 

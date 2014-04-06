@@ -1,3 +1,7 @@
+<?php
+if(!isset($_SESSION['userId']))
+    header("Location:index.php");
+?>
 <div class="container">
     <?php
         $mysqli = new mysqli('localhost','root','','myblog');

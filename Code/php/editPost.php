@@ -2,20 +2,23 @@
 	$mysqli = new mysqli('localhost','root','','myblog');
 	
 	if(isset($_POST['blogText'])) {
-		mysql_query("UPDATE t_blogPost SET blogText='".$_POST['blogText']."' WHERE id_blogPost='".$_GET['id']."'");
+            $blogText = strip_tags($_POST['blogText']);
+            $id = $_GET['id'];
+		$mysqli->query("UPDATE t_blogPost SET blogText='".$blogText."' WHERE id_blogPost='".$id."'");
+                header("Location: index.php?section=fullPost&id=$id");
 	}
 	
 	 echo '
 	  <div class="container">';
 		//bearbeiten
-		$id = $_GET['id'];
+		$id = $_GET['postID'];
 		
-		 $sql = 'SELECT * FROM t_blogpost, t_author WHERE id_blogPost = "'.$id.'" and id_author = blogAuthor';
+		 $sql = 'SELECT * FROM t_blogpost WHERE id_blogPost = "'.$id.'"';
 		 $result = $mysqli->query($sql);
 		 $row = $result->fetch_object();
 		 
 				echo '<div class="row">
-				<form action="#&?id='.$_GET['id'].'" method="POST">
+				<form action="index.php?section=editPost&id='.$id.'" method="POST">
 				<div class="col-lg-8">
 					<!-- the actual blog post: title/author/date/content -->
 					<h1>'.$row->blogTitle.'</h1>

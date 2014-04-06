@@ -11,7 +11,7 @@ echo '<div class="container">
                   </tr>
               </thead> 
         <tbody>';
-$sql = "SELECT t_author.*, COUNT(id_blogPost) as zahl FROM t_author,t_blogpost WHERE allowed = 1 AND blogAuthor = id_author";
+$sql = "SELECT t_author.*, COUNT(id_blogPost) as zahl FROM t_author, t_blogpost WHERE allowed = 1 AND blogAuthor = id_author GROUP BY blogAuthor ORDER BY zahl DESC";
 $result = $mysqli->query($sql);
 while($row = $result->fetch_object())
 {

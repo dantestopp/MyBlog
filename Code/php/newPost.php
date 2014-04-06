@@ -7,15 +7,15 @@
 			$title = $_POST['blogTitle'];
 			$author = $_SESSION['userId'];
 			
-            $mysqli->query("INSERT INTO t_blogPost(id_blogPost, blogTitle, blogText, blogAuthor, blogDate) VALUES (NULL, '$title', '$text', '$user', CURRENT_TIMESTAMP)");
-            echo 'worked'; 
+            $mysqli->query("INSERT INTO t_blogPost(blogTitle, blogText, blogAuthor) VALUES ('$title', '$text', '$author')");
+            header("Location:index.php?section=fullPost&id=$mysqli->insert_id");
         }
 		
 	
 		 echo '
 		  <div class="container">
 			<div class="row">
-					<form action="#" method="POST">
+					<form action="index.php?section=newPost" method="POST">
 					<div class="col-lg-8">
 						<h1>Title</h1>
 						<input name="blogTitle" type="text" size="113" />

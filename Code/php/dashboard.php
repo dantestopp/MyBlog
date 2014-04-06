@@ -3,12 +3,62 @@ if(!isset($_SESSION['userId']))
     header("Location:index.php");
 ?>
 <div class="container">
-    <?php
+        <?php
         $mysqli = new mysqli('localhost','root','','myblog');
         $result = $mysqli->query("SELECT COUNT(id_blogPost)as zahl, COUNT(DISTINCT blogAuthor) as zahlAuthor FROM t_blogpost");
         $row = $result->fetch_object();
-        echo $row->zahl." Posts from ".$row->zahlAuthor." Author(s).";
+        echo "<h1>".$row->zahl." Posts from ".$row->zahlAuthor." Author(s)</h1>";
         ?>
+	<div class="row">
+		<div class="span5">
+            <table class="table table-striped table-condensed">
+                  <thead>
+                  <tr>
+                      <th>Stats</th>
+                      <th>Amount</th>                                          
+                  </tr>
+              </thead> 
+                <tbody>
+
+                        <tr>
+                            <td>Views</td>
+                            <td><span class="glyphicon glyphicon-eye-open"></span> 20'025</td>
+                            </td>                                       
+                        </tr> 
+                        <tr>
+                            <td>Shared</td>
+                            <td><span class='glyphicon glyphicon-bullhorn'></span> 1'231 </td>
+                            </td>                                       
+                        </tr>
+                        <tr>
+                            <td>Favorits</td>
+                            <td><span class="glyphicon glyphicon-star"></span> 3'456</td>
+                        </tr>
+                        <tr>
+                            <td>Subscriber</td>
+                            <td><span class='glyphicon glyphicon-tags'></span> 256 </td>
+                            </td>                                       
+                        </tr>
+                        <tr>
+                            <td>Facebook</td>
+                            <td><span class='glyphicon glyphicon-thumbs-up'></span> 565 </td>
+                            </td>                                       
+                        </tr>
+                        <tr>
+                            <td>Google+</td>
+                            <td><span class="glyphicon glyphicon-plus"></span> 0</td>
+                            </td>                                       
+                        </tr>
+                        <tr>
+                            <td>Donated</td>
+                            <td><span class="glyphicon glyphicon-usd"></span> 210</td>
+                        </tr>
+              </tbody>
+            </table>
+            </div>
+	</div>
+    
+
     	<div class="row">
 			<div class="col-md-6">
 				<div class="panel panel-primary">

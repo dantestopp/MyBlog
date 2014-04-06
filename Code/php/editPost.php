@@ -1,5 +1,5 @@
 <?php
-	$mysqli = new mysqli('localhost','root','root001','myblog');
+	$mysqli = new mysqli('localhost','root','','myblog');
 	
 	if(isset($_POST['blogText'])) {
 		mysql_query("UPDATE t_blogPost SET blogText='".$_POST['blogText']."' WHERE id_blogPost='".$_GET['id']."'");

@@ -1,5 +1,5 @@
 <?php
-	$mysqli = new mysqli('localhost','root','root001','myblog');
+	$mysqli = new mysqli('localhost','root','','myblog');
 	
 	if(isset($_POST['blogText']) && isset($_POST['blogTitle'])){
 	$text = $_POST['blogText'];

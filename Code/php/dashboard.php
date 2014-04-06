@@ -31,7 +31,7 @@ if(!isset($_SESSION['userId']))
                             </td>                                       
                         </tr>
                         <tr>
-                            <td>Favorits</td>
+                            <td>Favorites</td>
                             <td><span class="glyphicon glyphicon-star"></span> 3'456</td>
                         </tr>
                         <tr>

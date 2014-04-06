@@ -5,8 +5,7 @@ if(isset($_POST['username'])&&isset($_POST['password']))
 {
     $username = $_POST['username'];
     $password = hash("sha256",$_POST['password']);
-    $result = $mysqli->query("SELECT * FROM t_author WHERE username = '$username' AND password = '$password'");
-    echo "SELECT * FROM t_author WHERE username = $username AND password = $password";
+    $result = $mysqli->query("SELECT * FROM t_author WHERE username = '$username' AND password = '$password' AND allowed = 1");
     if($result->num_rows>0)
     {    
     $row = $result->fetch_object();

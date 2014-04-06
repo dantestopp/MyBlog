@@ -1,5 +1,5 @@
 <?php 
-	$mysqli = new mysqli('localhost','root','root001','myblog');
+	$mysqli = new mysqli('localhost','root','','myblog');
 	
 	$id = $_GET['id'];
 	 $sql = 'SELECT * FROM t_blogpost, t_author WHERE id_blogPost = "'.$id.'" and id_author = blogAuthor';

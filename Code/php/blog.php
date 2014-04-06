@@ -10,8 +10,9 @@ else
 $myArray = array();
 	if ($result = $mysqli->query("SELECT id_blogPost, blogTitle, blogText, blogAuthor, blogDate, username FROM t_blogpost, t_author WHERE t_author.id_author = blogAuthor ORDER BY id_blogPost DESC LIMIT $page ,10")) {
 		 echo' <div class="container">';
+		 
 		 if(isset($_SESSION['userId'])){
-			echo '<a href="" ><button class="btn btn-primary ">new Post</button></a>';
+			echo '<a href="index.php?section=newPost" ><button class="btn btn-primary ">new Post</button></a>';
 		 }
 	    while($row = $result->fetch_object()) {
 	         

@@ -80,7 +80,7 @@
                                                 <tr>
                                                         <td>'.$row->id_author.'</td>
                                                         <td>'.$row->username.'</td>
-                                                        <td><a href="index.php?section=allow&id='.$row->id_author.'">X</a></td>
+                                                        <td><a href="index.php?section=deleteAuthor&id='.$row->id_author.'">X</a></td>
                                                 </tr>';
                                             }
                                             ?>

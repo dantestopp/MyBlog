@@ -3,7 +3,10 @@ $mysqli = new mysqli('localhost','root','','myblog');
 if(isset($_GET['page']))
 	$page = $_GET['page']*10-10;
 else
+{
 	$page = 0;
+        $_GET['page']=0;
+}
 $myArray = array();
 	if ($result = $mysqli->query("SELECT id_blogPost, blogTitle, blogText, blogAuthor, blogDate, username FROM t_blogpost, t_author WHERE t_author.id_author = blogAuthor ORDER BY id_blogPost DESC LIMIT $page ,10")) {
 		 echo' <div class="container">';
@@ -40,16 +43,18 @@ $myArray = array();
 	    }
 	    else
 		{	
-			$result = $mysqli->query("SELECT id_blogPost FROM t_blogpost ORDER BY id_blogPost DESC LIMIT  ,10");
-			if($result->num_rows > 0)
+                        
+			$result = $mysqli->query("SELECT id_blogPost FROM t_blogpost ORDER BY id_blogPost DESC LIMIT  $page,10");
+                        if($result->num_rows > 0)
 			{
+                                echo "SELECT id_blogPost FROM t_blogpost ORDER BY id_blogPost DESC LIMIT  $page,10";
 				$temp_page = $_GET['page']-1;
 				echo "<a href='index.php?page=".$temp_page."'>Last page</a>";
 				$valid = true;
 			}
 			
 		}
-		if($valid == false)
+		if(!$valid)
 		{
 			$temp_page = $_GET['page']-1;
 			echo "<a href='index.php?page=".$temp_page."'>Last page</a><br/>";

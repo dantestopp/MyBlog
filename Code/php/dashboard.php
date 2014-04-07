@@ -71,7 +71,7 @@ if(!isset($_SESSION['userId']))
 						</div>
 					</div>
 					<div class="panel-body">
-						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter pending Authors" />
 					</div>
 					<table class="table table-hover" id="dev-table">
 						<thead>
@@ -115,9 +115,9 @@ if(!isset($_SESSION['userId']))
                                         </div>
                                 </div>
                                 <div class="panel-body">
-                                        <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+                                        <input type="text" class="form-control" id="author-table-filter" data-action="filter" data-filters="#author-table" placeholder="Filter Authors" />
                                 </div>
-                                <table class="table table-hover" id="dev-table">
+                                <table class="table table-hover" id="author-table">
                                         <thead>
                                                 <tr>
                                                         <th>#</th>
